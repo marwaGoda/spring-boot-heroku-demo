@@ -87,13 +87,6 @@
         <git.commit.link>${project.scm.url}/commit/${buildNumber}</git.commit.link>
     </properties>
 
-    <scm>
-        <url>https://github.com/marwaGoda/spring-boot-heroku-demo</url>
-        <connection>scm:git:git://github.com/marwaGoda/spring-boot-heroku-demo.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/marwaGoda/spring-boot-heroku-demo.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
-
     <build>
         <finalName>app</finalName>
         <resources>
@@ -129,17 +122,12 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>buildnumber-maven-plugin</artifactId>
-                        <version>1.4</version>
-                        <executions>
-                            <execution>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>create</goal>
-                                </goals>
-                            </execution>
-                        </executions>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>1.8</source>
+                            <target>1.8</target>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
